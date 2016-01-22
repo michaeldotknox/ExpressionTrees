@@ -1,4 +1,4 @@
-﻿namespace ExpressionTrees
+﻿namespace ExpressionTrees.Search
 {
     public class Field
     {

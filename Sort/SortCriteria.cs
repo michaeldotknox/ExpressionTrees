@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ExpressionTrees.Search
+namespace ExpressionTrees.Sort
 {
-    public class SearchCriteria
+    public class SortCriteria
     {
         public IEnumerable<Field> Fields { get; set; }
     }

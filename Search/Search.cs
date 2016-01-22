@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ExpressionTrees
+namespace ExpressionTrees.Search
 {
     public static class Search
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExpressionTrees.Search;
 
 namespace ExpressionTrees
 {
@@ -44,13 +45,13 @@ namespace ExpressionTrees
             Console.WriteLine("");
             foreach (var field in criteria.Fields)
             {
-                Console.WriteLine("Search Criteria: Field = {0}, Operator = {1}, Value = {2}", field.FieldName, field.Operator, field.Value );
+                Console.WriteLine($"Search Criteria: Field = {field.FieldName}, Operator = {field.Operator}, Value = {field.Value}");
             }
             Console.Read();
-            var results = Search.SearchAsync(data, criteria);
+            var results = Search.Search.SearchAsync(data, criteria);
             foreach (var result in results.Result)
             {
-                Console.WriteLine("Found results: {0} - {1} {2}: {3}", result.EmployeeId, result.FirstName, result.LastName, result.Title);
+                Console.WriteLine($"Found results: {result.EmployeeId} - {result.FirstName} {result.LastName}: {result.Title}", result.EmployeeId, result.FirstName, result.LastName, result.Title);
             }
             Console.WriteLine("");
             Console.WriteLine("");
