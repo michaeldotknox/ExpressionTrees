@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Search.Demo
+namespace ExpressionTrees
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            var testData = CreateTestData();
+            var testData = CreateTestData().ToList();
             Console.WriteLine("Overall data set:");
             foreach (var employee in testData)
             {
@@ -43,27 +41,27 @@ namespace Search.Demo
 
         }
 
-        public static IEnumerable<SearchDemoModel> CreateTestData()
+        public static IEnumerable<SearchModel> CreateTestData()
         {
-            return new List<SearchDemoModel>
+            return new List<SearchModel>
             {
-                new SearchDemoModel {EmployeeId = 1, FirstName = "Michael", LastName = "Knox", Title = "Developer"},
-                new SearchDemoModel {EmployeeId = 2, FirstName = "Michael", LastName = "Coker", Title = "Developer"},
-                new SearchDemoModel {EmployeeId = 3, FirstName = "Jeff", LastName = "Johnson", Title = "Developer"},
-                new SearchDemoModel {EmployeeId = 4, FirstName = "Daniel", LastName = "Phelps", Title = "Developer"},
-                new SearchDemoModel
+                new SearchModel {EmployeeId = 1, FirstName = "Michael", LastName = "Knox", Title = "Developer"},
+                new SearchModel {EmployeeId = 2, FirstName = "Michael", LastName = "Coker", Title = "Developer"},
+                new SearchModel {EmployeeId = 3, FirstName = "Jeff", LastName = "Johnson", Title = "Developer"},
+                new SearchModel {EmployeeId = 4, FirstName = "Daniel", LastName = "Phelps", Title = "Developer"},
+                new SearchModel
                 {
                     EmployeeId = 5,
                     FirstName = "Ponchai",
                     LastName = "Reainthong",
                     Title = "Developer"
                 },
-                new SearchDemoModel {EmployeeId = 6, FirstName = "Ryan", LastName = "Church", Title = "Manager"},
-                new SearchDemoModel {EmployeeId = 7, FirstName = "Deryl", LastName = "Byrket", Title = "Manager"}
+                new SearchModel {EmployeeId = 6, FirstName = "Ryan", LastName = "Church", Title = "Manager"},
+                new SearchModel {EmployeeId = 7, FirstName = "Deryl", LastName = "Byrket", Title = "Manager"}
             };
         }
 
-        public static void RunTest(IEnumerable<SearchDemoModel> data, SearchCriteria criteria )
+        public static void RunTest(IEnumerable<SearchModel> data, SearchCriteria criteria )
         {
             Console.WriteLine("");
             foreach (var field in criteria.Fields)
