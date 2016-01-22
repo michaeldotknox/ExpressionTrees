@@ -10,6 +10,7 @@ namespace ExpressionTrees
         static void Main(string[] args)
         {
             var testData = DataFactory.Create().ToList();
+
             Console.WriteLine("Overall data set:");
             foreach (var employee in testData)
             {
@@ -21,7 +22,7 @@ namespace ExpressionTrees
             {
                 Fields = new List<Field>
                 {
-                    new Field {FieldName = "Title", Direction = "asc"}
+                    new Field {FieldName = "LastName", Direction = "asc"}
                 }
             };
             RunTest(testData, criteria);
