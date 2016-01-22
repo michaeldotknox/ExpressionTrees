@@ -1,6 +1,6 @@
 ﻿namespace ExpressionTrees
 {
-    public class SearchModel
+    public class Model
     {
         public int EmployeeId { get; set; }
         public string FirstName { get; set; }

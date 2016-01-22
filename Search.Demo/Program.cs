@@ -8,7 +8,7 @@ namespace ExpressionTrees
     {
         static void Main(string[] args)
         {
-            var testData = CreateTestData().ToList();
+            var testData = DataFactory.Create().ToList();
             Console.WriteLine("Overall data set:");
             foreach (var employee in testData)
             {
@@ -36,32 +36,10 @@ namespace ExpressionTrees
             };
             RunTest(testData, searchCriteria);
 
-
             Console.Read();
-
         }
 
-        public static IEnumerable<SearchModel> CreateTestData()
-        {
-            return new List<SearchModel>
-            {
-                new SearchModel {EmployeeId = 1, FirstName = "Michael", LastName = "Knox", Title = "Developer"},
-                new SearchModel {EmployeeId = 2, FirstName = "Michael", LastName = "Coker", Title = "Developer"},
-                new SearchModel {EmployeeId = 3, FirstName = "Jeff", LastName = "Johnson", Title = "Developer"},
-                new SearchModel {EmployeeId = 4, FirstName = "Daniel", LastName = "Phelps", Title = "Developer"},
-                new SearchModel
-                {
-                    EmployeeId = 5,
-                    FirstName = "Ponchai",
-                    LastName = "Reainthong",
-                    Title = "Developer"
-                },
-                new SearchModel {EmployeeId = 6, FirstName = "Ryan", LastName = "Church", Title = "Manager"},
-                new SearchModel {EmployeeId = 7, FirstName = "Deryl", LastName = "Byrket", Title = "Manager"}
-            };
-        }
-
-        public static void RunTest(IEnumerable<SearchModel> data, SearchCriteria criteria )
+        public static void RunTest(IEnumerable<Model> data, SearchCriteria criteria )
         {
             Console.WriteLine("");
             foreach (var field in criteria.Fields)
